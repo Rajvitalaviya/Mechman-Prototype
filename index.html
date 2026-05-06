@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechmann Engineering Pvt. Ltd. | Filtration, Separation & Purification Solutions</title>
+    <meta name="description"
+        content="Mechmann Engineering specializes in innovative turnkey Filtration, Separation & Purification Solutions for industrial, commercial and municipal facilities worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-text">
+                    <img src="images/mechmann-logo.webp" alt="Mechmann Engineering" class="logo-img">
+                    <span class="logo-tagline">It's not Magic, It's Engineering</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle">Products <span class="arrow">▼</span></a>
+                    <div class="dropdown-menu mega-menu-tabbed">
+                        <div class="mega-tabs-container">
+                            <!-- Column 1: Main Categories -->
+                            <div class="mega-main-nav">
+                                <div class="mega-main-item active" data-main="filtration">1) Filtration Technologies</div>
+                                <div class="mega-main-item" data-main="separation">2) Separation Technologies</div>
+                                <div class="mega-main-item" data-main="water">3) Water & Waste Water</div>
+                            </div>
+
+                            <!-- Column 2: Sub Categories (Dynamic) -->
+                            <div class="mega-sub-nav" id="megaSubNav">
+                                <!-- Filtration Sub-categories (Active by default) -->
+                                <div class="mega-sub-group active" data-main-ref="filtration">
+                                    <div class="mega-sub-item active" data-sub="liquid">Liquid Filter Cartridges <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="metal">Metal Filter Cartridges <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="ind-housings">Industrial Filter Housings <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="pp-frp">PP / FRP & Sanitary <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="self-clean">Self Cleaning Filters <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="air-gas">Air & Gas Filtration <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="bag-filters">Bag & Dual Flow Filters <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="highflow">Highflow Filter Systems <span class="chevron">›</span></div>
+                                </div>
+                                <!-- Separation Sub-categories -->
+                                <div class="mega-sub-group" data-main-ref="separation">
+                                    <div class="mega-sub-item" data-sub="strainers">Pipeline Strainers <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="solid-liquid">Solid-Liquid Separation <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="coalescers">Coalescers & Separators <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="special-sep">Specialized Separation <span class="chevron">›</span></div>
+                                </div>
+                                <!-- Water Sub-categories -->
+                                <div class="mega-sub-group" data-main-ref="water">
+                                    <div class="mega-sub-item" data-sub="water-treat">Water Treatment Systems <span class="chevron">›</span></div>
+                                    <div class="mega-sub-item" data-sub="waste-water">Waste Water Treatment <span class="chevron">›</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Product Lists (Dynamic) -->
+                            <div class="mega-product-view" id="megaProductView">
+                                <!-- Filtration Products -->
+                                <div class="mega-product-list active" data-sub-ref="liquid">
+                                    <ul>
+                                        <li><a href="micro-string-wound-filter.html">Micro String Wound</a></li>
+                                        <li><a href="#">Melt Blown Cartridge</a></li>
+                                        <li><a href="#">Resin Bonded Elements</a></li>
+                                        <li><a href="#">Bicomponent Filters</a></li>
+                                        <li><a href="#">Pleated Polypropylene</a></li>
+                                        <li><a href="#">Sterile Grade Filters</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="metal">
+                                    <ul>
+                                        <li><a href="#">Sintered Mesh Elements</a></li>
+                                        <li><a href="#">Pleated Mesh Filters</a></li>
+                                        <li><a href="#">Sintered Metal Powder</a></li>
+                                        <li><a href="#">Wedge Wire Elements</a></li>
+                                        <li><a href="#">Filter Lateral Systems</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="ind-housings">
+                                    <ul>
+                                        <li><a href="dual-filter-housing.html">ASME Code Housings</a></li>
+                                        <li><a href="#">Multi-Cartridge Housings</a></li>
+                                        <li><a href="#">Carbon Steel / SS316</a></li>
+                                        <li><a href="#">Custom Fabricated units</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="pp-frp">
+                                    <ul>
+                                        <li><a href="#">Polypropylene Housings</a></li>
+                                        <li><a href="#">FRP Filter Vessels</a></li>
+                                        <li><a href="#">Sanitary Grade units</a></li>
+                                        <li><a href="#">Hygienic Filter Systems</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="self-clean">
+                                    <ul>
+                                        <li><a href="#">Automatic Backwash</a></li>
+                                        <li><a href="#">Mechanically Cleaned</a></li>
+                                        <li><a href="#">Scraper Type Filters</a></li>
+                                        <li><a href="#">Brush Type Systems</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="air-gas">
+                                    <ul>
+                                        <li><a href="#">Compressed Air Filters</a></li>
+                                        <li><a href="#">Gas Purification units</a></li>
+                                        <li><a href="#">Steam Filtration</a></li>
+                                        <li><a href="#">Coalescing Air Filters</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="bag-filters">
+                                    <ul>
+                                        <li><a href="dual-filter-housing.html">Single Bag Housings</a></li>
+                                        <li><a href="dual-filter-housing.html">Multi Bag Housings</a></li>
+                                        <li><a href="#">Dual Flow Bag Systems</a></li>
+                                        <li><a href="#">Filter Bag Elements</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="highflow">
+                                    <ul>
+                                        <li><a href="#">Vertical Highflow</a></li>
+                                        <li><a href="#">Radial Highflow units</a></li>
+                                        <li><a href="#">Horizontal Highflow</a></li>
+                                        <li><a href="#">Highflow Cartridges</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Separation Products -->
+                                <div class="mega-product-list" data-sub-ref="strainers">
+                                    <ul>
+                                        <li><a href="#">Cast Y & Tee Strainers</a></li>
+                                        <li><a href="#">Basket Type Strainers</a></li>
+                                        <li><a href="#">Temporary / Cone Filters</a></li>
+                                        <li><a href="#">Fabricated Simplex</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="solid-liquid">
+                                    <ul>
+                                        <li><a href="#">Centrifugal Separators</a></li>
+                                        <li><a href="#">Hydrocyclone Systems</a></li>
+                                        <li><a href="#">Candle Filters</a></li>
+                                        <li><a href="#">Sparkler Filter units</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="coalescers">
+                                    <ul>
+                                        <li><a href="#">Liquid-Liquid Coalescers</a></li>
+                                        <li><a href="#">Vane Type Separators</a></li>
+                                        <li><a href="#">Demister Pads / Mesh</a></li>
+                                        <li><a href="#">Filter Separator units</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="special-sep">
+                                    <ul>
+                                        <li><a href="#">Oil Purification Systems</a></li>
+                                        <li><a href="#">Magnetic Separators</a></li>
+                                        <li><a href="#">Hydraulic & Panel Filters</a></li>
+                                        <li><a href="#">Filter Press Systems</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Water Products -->
+                                <div class="mega-product-list" data-sub-ref="water-treat">
+                                    <ul>
+                                        <li><a href="#">Natural Chemical Free</a></li>
+                                        <li><a href="#">Ultra Filtration (UF)</a></li>
+                                        <li><a href="#">Reverse Osmosis (RO)</a></li>
+                                        <li><a href="#">Electro De-ionisation</a></li>
+                                        <li><a href="#">UV & Ozone Systems</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-product-list" data-sub-ref="waste-water">
+                                    <ul>
+                                        <li><a href="#">MBBR / SBR Systems</a></li>
+                                        <li><a href="#">Packaged Sewage Plants</a></li>
+                                        <li><a href="#">Membrane Bio-Reactors</a></li>
+                                        <li><a href="#">Reed Bed Systems</a></li>
+                                        <li><a href="#">Effluent Treatment (ETP)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-slides">
+            <div class="hero-slide active" id="slide1">
+                <video autoplay muted loop playsinline class="hero-bg-video">
+                    <source src="images/slider-video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="hero-content container">
+                    <div class="hero-badge reveal-up">Engineering Excellence</div>
+                    <h1 class="hero-title reveal-up delay-1">
+                        Innovative <span class="text-red">Filtration</span><br>
+                        &amp; Purification Solutions
+                    </h1>
+                    <p class="hero-desc reveal-up delay-2">
+                        Serving diverse industrial needs across the globe with turnkey<br>
+                        Separation, Filtration & Water Treatment systems.
+                    </p>
+                    <div class="hero-actions reveal-up delay-3">
+                        <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+                    </div>
+                </div>
+                <!-- Decorative geometric lines -->
+                <div class="hero-geo">
+                    <div class="geo-line geo-line-1"></div>
+                    <div class="geo-line geo-line-2"></div>
+                    <div class="geo-circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+    <!-- Hidden SVG defs for ring gradient -->
+    <svg style="width:0;height:0;position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#024d87" />
+                <stop offset="100%" stop-color="#D80C08" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual animate-on-scroll slide-right">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-main">
+                            <img src="images/about_main.webp" alt="Mechmann Manufacturing Facility"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="about-img-accent">
+                            <img src="images/about_accent.webp" alt="Lab Testing Facility"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll slide-left">
+                    <div class="section-label">About Mechmann</div>
+                    <h2 class="section-title">Engineering Solutions <span class="text-red">Beyond Boundaries</span></h2>
+                    <p class="about-desc">
+                        MECHMANN is an Engineering and Fabrication company specializing in innovative turnkey
+                        <strong>Filtration, Separation & Purification Solutions</strong>, serving the diverse needs of
+                        customers across the globe.
+                    </p>
+                    <p class="about-desc">
+                        With two state-of-the-art manufacturing facilities near Mumbai and over 20,000 sq ft of
+                        manufacturing area, we are an ISO 9001:2008 certified company committed to environmental
+                        excellence.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="h-dot"></span>
+                            <span>Two state-of-the-art manufacturing facilities near Mumbai</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot"></span>
+                            <span>20,000+ Sq ft. Manufacturing Area</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot"></span>
+                            <span>ISO 9001:2008 Certified Facility</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot"></span>
+                            <span>Global Presence & Exports</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary-outline">Read More <span>→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">What We Offer</div>
+                <h2 class="section-title">Our <span class="text-red">Services</span> & Solutions</h2>
+                <p class="section-subtitle">Comprehensive engineering solutions for filtration, separation and
+                    purification across all industries</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll" data-delay="0">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+                        alt="Filtration & Purification">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Filtration & Purification</h3>
+                        <div class="sc-divider"></div>
+                        <p>Advanced filtration systems including V-shaped wire filters with minimal clogging, designed
+                            for industrial precision.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" data-delay="100">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=600&q=80"
+                            alt="Separation Technologies">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Separation Technologies</h3>
+                        <div class="sc-divider"></div>
+                        <p>State-of-the-art separation solutions using centrifugal, gravity, and membrane-based
+                            technologies.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" data-delay="200">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80"
+                            alt="Water Treatment Process">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Water Treatment Process</h3>
+                        <div class="sc-divider"></div>
+                        <p>Turnkey water and waste water treatment systems with total water management and flexible,
+                            bespoke designs.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" data-delay="300">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
+                            alt="Membrane Technologies">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Membrane Technologies</h3>
+                        <div class="sc-divider"></div>
+                        <p>Ultrafiltration, Reverse Osmosis, Microfiltration, Electro-Deionisation and UV chemical-free
+                            disinfection systems.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" data-delay="400">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80"
+                            alt="Waste Water Treatment">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Waste Water Treatment</h3>
+                        <div class="sc-divider"></div>
+                        <p>Moving Bed Bio Reactor (MBBR), SBR, Packaged wastewater plants, MBR and Reed Bed treatment
+                            systems.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll" data-delay="500">
+                    <div class="sc-image">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=600&q=80"
+                            alt="Value Added Products">
+                    </div>
+                    <div class="sc-content">
+                        <h3>Value Added Products</h3>
+                        <div class="sc-divider"></div>
+                        <p>Innovative green solutions customized for industrial, commercial and municipal facilities as
+                            per engineering requirements.</p>
+                        <a href="#" class="service-link">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARALLAX CTA SECTION ===== -->
+    <section class="parallax-section" id="parallax">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content animate-on-scroll">
+            <div class="mission-text-box">
+                <div class="section-label" style="color: rgba(255,255,255,0.7);">Our Mission</div>
+                <h2 class="parallax-title">
+                    Make Continuous Efforts to Help<br>
+                    <span class="text-red">Prevent Pollution &amp; Control Degradation</span>
+                </h2>
+                <p class="parallax-sub">
+                    Improve environmental performance through all our products, services and activities
+                </p>
+                <div class="parallax-actions">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#" class="btn btn-glass">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MARKET SEGMENTS ===== -->
+    <section class="segments-section" id="segments">
+        <div class="container segments-container">
+            <div class="section-header animate-on-scroll left-aligned">
+                <div class="section-label">Industries We Serve</div>
+                <h2 class="section-title">Market <span class="text-red">Segments</span></h2>
+                <p class="section-subtitle">Our solutions span across multiple industries and market verticals globally
+                </p>
+                <div class="segments-nav">
+                    <button class="slider-btn prev-btn" id="prevSegment" aria-label="Previous">←</button>
+                    <button class="slider-btn next-btn" id="nextSegment" aria-label="Next">→</button>
+                </div>
+            </div>
+            
+            <div class="segments-slider-wrap animate-on-scroll slide-left">
+                <div class="segments-slider-inner" id="segmentsSlider">
+                    <div class="segments-grid">
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/inustrial.webp" alt="Industrial" class="segment-icon-img">
+                            </div>
+                            <span>Industrial</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/pharma.webp" alt="Pharmaceutical" class="segment-icon-img">
+                            </div>
+                            <span>Pharmaceutical</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/food.webp" alt="Food & Beverage" class="segment-icon-img">
+                            </div>
+                            <span>Food & Beverage</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/infra.webp" alt="Infrastructure" class="segment-icon-img">
+                            </div>
+                            <span>Infrastructure</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/healthcare.webp" alt="Healthcare" class="segment-icon-img">
+                            </div>
+                            <span>Healthcare</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/environment.webp" alt="Environmental" class="segment-icon-img">
+                            </div>
+                            <span>Environmental</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/oil n gas.webp" alt="Oil & Gas" class="segment-icon-img">
+                            </div>
+                            <span>Oil & Gas</span>
+                        </div>
+                        <div class="segment-item">
+                            <div class="segment-icon">
+                                <img src="images/municipal.webp" alt="Municipal" class="segment-icon-img">
+                            </div>
+                            <span>Municipal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWS SECTION ===== -->
+    <section class="news-section" id="news">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Latest Updates</div>
+                <h2 class="section-title">Engineering <span class="text-red">News</span></h2>
+            </div>
+            <div class="news-grid">
+                <article class="news-card animate-on-scroll" data-delay="0">
+                    <div class="news-date">Mar 2024</div>
+                    <h3 class="news-title">Five Years of Reverse Osmosis Membrane Elements from LANXESS in Bitterfeld
+                    </h3>
+                    <p class="news-excerpt">Significant milestone achieved in reverse osmosis technology deployment for
+                        large-scale water treatment facilities.</p>
+                    <a href="#" class="news-link">Read More →</a>
+                </article>
+                <article class="news-card animate-on-scroll" data-delay="150">
+                    <div class="news-date">Feb 2024</div>
+                    <h3 class="news-title">Filtration Leader Wins Significant Contract with US Microelectronics Giant
+                    </h3>
+                    <p class="news-excerpt">Major contract win for ultra-pure water filtration systems for semiconductor
+                        manufacturing processes.</p>
+                    <a href="#" class="news-link">Read More →</a>
+                </article>
+                <article class="news-card animate-on-scroll" data-delay="300">
+                    <div class="news-date">Jan 2024</div>
+                    <h3 class="news-title">A Revolution in Corrosion Protection for Water Infrastructure</h3>
+                    <p class="news-excerpt">Breakthrough developments in pipeline and infrastructure corrosion-resistant
+                        engineering for long-term water systems.</p>
+                    <a href="#" class="news-link">Read More →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT CTA ===== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll slide-right">
+                    <div class="section-label">Get In Touch</div>
+                    <h2 class="section-title">Let's Discuss Your <span class="text-red">Engineering</span> Needs</h2>
+                    <p>Our team of expert engineers is ready to help you find the right filtration, separation, and
+                        purification solution for your specific requirements.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Call Us</strong>
+                                <span>9930900990 / 9322994546</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>mechmann@mechmann.in</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Near Mumbai, Maharashtra, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap animate-on-scroll slide-left">
+                    <form class="contact-form" id="enquiryForm">
+                        <h3>Send an Enquiry</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select id="service">
+                                <option value="">Select Service of Interest</option>
+                                <option>Filtration & Purification</option>
+                                <option>Water Treatment Process</option>
+                                <option>Membrane Technologies</option>
+                                <option>Waste Water Treatment</option>
+                                <option>Value Added Products</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message / Requirements" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Enquiry →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="images/mechmann-logo.webp" alt="Mechmann Engineering" class="logo-img-footer">
+                            <span class="logo-tagline" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">It's
+                                not Magic, It's Engineering</span>
+                        </div>
+                        <p class="footer-desc">An Engineering and Fabrication company specializing in innovative turnkey
+                            Filtration, Separation & Purification Solutions.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn">in</a>
+                            <a href="#" aria-label="Twitter">tw</a>
+                            <a href="#" aria-label="Facebook">fb</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Filtration & Purification</a></li>
+                            <li><a href="#">Separation Technologies</a></li>
+                            <li><a href="#">Water Treatment</a></li>
+                            <li><a href="#">Membrane Technologies</a></li>
+                            <li><a href="#">Waste Water Treatment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Mechmann</a></li>
+                            <li><a href="#">Infrastructure</a></li>
+                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="#">Core Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:9930900990">9930900990</a></li>
+                            <li><a href="tel:9322994546">9322994546</a></li>
+                            <li><a href="mailto:mechmann@mechmann.in">mechmann@mechmann.in</a></li>
+                            <li><a href="#">Photo Gallery</a></li>
+                            <li><a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2024 Mechmann Engineering Pvt. Ltd. All Rights Reserved.</p>
+                <p>Designed & Developed By <span class="text-red">♥</span>Skycognitive Pvt. Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

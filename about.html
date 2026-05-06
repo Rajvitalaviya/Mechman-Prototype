@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mechmann Engineering Pvt. Ltd.</title>
+    <meta name="description"
+        content="Discover Mechmann Engineering's journey, mission, and professional team. We have 25+ years of experience delivering Filtration, Separation & Purification Solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tab and Timeline styles remain here as they are unique to About page */
+        .tab-btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: var(--radius);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            gap: 12px;
+        }
+        .tab-btn svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2.5px;
+        }
+        .tab-btn.active {
+            background: var(--red);
+            color: var(--white);
+            border: 2px solid var(--red);
+            box-shadow: 0 5px 15px rgba(216, 12, 8, 0.2);
+        }
+        .tab-btn:not(.active) {
+            background: white;
+            color: var(--dark);
+            border: 2px solid var(--border);
+        }
+        .tab-btn:not(.active):hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .timeline-year {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            padding: 10px 0;
+        }
+        .timeline-year.active {
+            font-size: 2.2rem;
+            color: var(--red);
+            font-weight: 700;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -11px;
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        .timeline-dot.active {
+            width: 20px;
+            height: 20px;
+            background: var(--red);
+            top: 10px;
+            left: -11px;
+        }
+        .timeline-dot:not(.active) {
+            width: 14px;
+            height: 14px;
+            background: var(--border);
+            left: -8px;
+        }
+        
+        /* Team Section CSS */
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .team-title-wrap {
+            max-width: 600px;
+        }
+
+        .team-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .team-carousel::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        
+        .team-card {
+            min-width: calc(25% - 22.5px); /* Exactly 4 cards visible (gap is 30px) */
+            flex-shrink: 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .team-card { min-width: calc(33.333% - 20px); }
+        }
+        @media (max-width: 768px) {
+            .team-card { min-width: calc(50% - 15px); }
+        }
+        @media (max-width: 480px) {
+            .team-card { min-width: 100%; }
+        }
+        
+        .team-image-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .team-image-box img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-image-box img {
+            transform: scale(1.05);
+        }
+        
+        .team-name {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .team-role {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .btn-outline-dark {
+            border: 2px solid var(--border);
+            color: var(--dark);
+            padding: 12px 25px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--red);
+            border-color: var(--red);
+            color: #fff;
+        }
+        
+        .btn-outline-dark span {
+            background: var(--red);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-dark:hover span {
+            background: white;
+            color: var(--red);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-text">
+                    <img src="images/mechmann-logo.webp" alt="Mechmann Engineering" class="logo-img">
+                    <span class="logo-tagline">It's not Magic, It's Engineering</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle">Products <span class="arrow">▼</span></a>
+                    <div class="dropdown-menu mega-menu">
+                        <!-- Column 1: Filtration Technologies -->
+                        <div class="mega-col">
+                            <div class="mega-section-title">1) Filtration Technologies</div>
+                            <div class="mega-sub-col">
+                                <h4>Liquid Filter Replacement Cartridges</h4>
+                                <ul>
+                                    <li><a href="micro-string-wound-filter.html">Micro String Wound</a></li>
+                                    <li><a href="micro-string-wound-filter.html">Melt Blown Cartridge</a></li>
+                                    <li><a href="micro-string-wound-filter.html">Resin Bonded</a></li>
+                                    <li><a href="micro-string-wound-filter.html">Bicomponent Filter</a></li>
+                                    <li><a href="micro-string-wound-filter.html">Pleated Polypropylene</a></li>
+                                    <li><a href="micro-string-wound-filter.html">Sterile Grade</a></li>
+                                    <li><a href="dual-filter-housing.html">Filter Bags / Dual Flow</a></li>
+                                    <li><a href="#">Highflow Filter (Vertical/Radial)</a></li>
+                                    <li><a href="#">Lenticular / Carbon Elements</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Metal Filter Cartridges</h4>
+                                <ul>
+                                    <li><a href="#">Sintered / Pleated Mesh</a></li>
+                                    <li><a href="#">Wedge Wire / Filter Lateral</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Filter Housings</h4>
+                                <ul>
+                                    <li><a href="dual-filter-housing.html">Industrial Housings (ASME)</a></li>
+                                    <li><a href="#">PP / FRP / Sanitary Housings</a></li>
+                                    <li><a href="#">Self Cleaning Filters</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Compressed Air & Sanitary</h4>
+                                <ul>
+                                    <li><a href="#">Air Filtration & Purification</a></li>
+                                    <li><a href="#">Sanitary Filter Housings</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Separation Technologies -->
+                        <div class="mega-col">
+                            <div class="mega-section-title">2) Separation Technologies</div>
+                            <div class="mega-sub-col">
+                                <h4>Pipe Line Strainers</h4>
+                                <ul>
+                                    <li><a href="#">Cast Y & Tee Strainers</a></li>
+                                    <li><a href="#">Basket Strainers & Elements</a></li>
+                                    <li><a href="#">Temporary Strainers</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Solid Separation & Oil</h4>
+                                <ul>
+                                    <li><a href="#">Liquid Solid Separation</a></li>
+                                    <li><a href="#">Candle / Sparkler Filters</a></li>
+                                    <li><a href="#">Oil Purification Systems</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Coalescers & Separators</h4>
+                                <ul>
+                                    <li><a href="#">Horizontal / Vane Separators</a></li>
+                                    <li><a href="#">Demister / Coalescer Housing</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Specialized Filters</h4>
+                                <ul>
+                                    <li><a href="#">Magnetic Separators</a></li>
+                                    <li><a href="#">Hydraulic & Panel Filters</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Water Treatment Systems -->
+                        <div class="mega-col">
+                            <div class="mega-section-title">3) Water & Waste Water</div>
+                            <div class="mega-sub-col">
+                                <h4>Water Treatment Systems</h4>
+                                <ul>
+                                    <li><a href="#">Natural (Chemical Free) Systems</a></li>
+                                    <li><a href="#">Ultra Filtration / RO / MF</a></li>
+                                    <li><a href="#">Electro De-ionisation</a></li>
+                                    <li><a href="#">UV & Ozone Disinfection</a></li>
+                                    <li><a href="#">Pressure Booster Systems</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-sub-col">
+                                <h4>Waste Water Treatment</h4>
+                                <ul>
+                                    <li><a href="#">MBBR / SBR / MBR Systems</a></li>
+                                    <li><a href="#">Packaged Wastewater Plants</a></li>
+                                    <li><a href="#">Membrane Bio Reactors (EMBR/SMBR)</a></li>
+                                    <li><a href="#">Reed Bed Treatment</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-featured" style="margin-top: 20px; background: var(--primary); color: white;">
+                                <h5 style="color: white; margin-bottom: 5px;">Custom Solutions?</h5>
+                                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-bottom: 10px;">We provide turnkey engineering for complex needs.</p>
+                                <a href="#contact" class="btn-sm" style="background: white; color: var(--primary); font-weight: 700;">Talk to Specialist</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO PAGE SECTION ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 20px; animation: revealUp 0.8s forwards;">About Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> 
+                <span class="breadcrumb-sep">•</span> 
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTRODUCTION SECTION ===== -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual animate-on-scroll slide-right">
+                    <div class="about-img-wrapper" style="position: relative;">
+                        <img src="images/about_main.webp" alt="Industrial Innovation" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-hover);">
+                        <div style="position: absolute; bottom: -30px; left: -30px; background: var(--red); color: white; padding: 25px; border-radius: 50%; width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; line-height: 1.3; border: 8px solid white; box-shadow: var(--shadow-card);">
+                            25+ Years<br>Of<br>Experience
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll slide-left">
+                    <div class="section-label">ABOUT US</div>
+                    <h2 class="section-title">Industrial <span class="text-red">Innovation</span> & Excellence</h2>
+                    <p class="about-desc">At the heart of our operations is a commitment to delivering superior products through cutting-edge technology, innovative engineering processes, and stringent quality control.</p>
+                    <p class="about-desc">We specialize in turnkey Filtration, Separation & Purification Solutions, designed specifically for your environmental and industrial challenges.</p>
+                    <div class="about-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 35px;">
+                        <div class="highlight-item">
+                            <span class="h-dot" style="background:var(--red);"></span>
+                            <span style="font-weight: 600; color: var(--primary);">Sustainable Manufacturing</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot" style="background:var(--red);"></span>
+                            <span style="font-weight: 600; color: var(--primary);">Advanced Automation</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot" style="background:var(--red);"></span>
+                            <span style="font-weight: 600; color: var(--primary);">Efficient Processes</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="h-dot" style="background:var(--red);"></span>
+                            <span style="font-weight: 600; color: var(--primary);">Reliable Delivery</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 45px;">
+                        <a href="index.html#services" class="btn btn-primary">Discover More <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR APPROACH TABS ===== -->
+    <section style="background: var(--off-white); padding: 100px 0;">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">OUR APPROACH</div>
+                <h2 class="section-title">Transforming The <span class="text-red">Industry</span></h2>
+                <p class="section-subtitle">We provide a wide range of services tailored to meet the unique needs of modern industries globally.</p>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 35px; margin-top: 50px;" class="animate-on-scroll">
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <button class="tab-btn active">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        Our Mission
+                    </button>
+                    <button class="tab-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        Our Vision
+                    </button>
+                    <button class="tab-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"></path><path d="M11 3L8 9l4 12 4-12-3-6"></path><path d="M2 9h20"></path></svg>
+                        Our Value
+                    </button>
+                </div>
+                <div style="width: 100%; position: relative;">
+                    <!-- Tab Content: Mission -->
+                    <div class="tab-content active" id="mission-content" style="display: flex; gap: 40px; background: white; padding: 50px; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px; height: 380px;">
+                           <img src="images/about_accent.webp" style="border-radius: var(--radius); width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary); font-family: var(--font-heading);">Our Mission</h3>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 20px;">Our mission is to transform the factory and industry sectors through sustainable practices, innovative engineering, and tailored technical solutions. We foster industrial growth that benefits both businesses and the global environment.</p>
+                            <ul style="margin-top: 10px; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Advanced Technology Integration
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Environmental Sustainability
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Community Responsibility
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Vision -->
+                    <div class="tab-content" id="vision-content" style="display: none; gap: 40px; background: white; padding: 50px; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px; height: 380px;">
+                           <img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=600&q=80" style="border-radius: var(--radius); width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary); font-family: var(--font-heading);">Our Vision</h3>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 20px;">To be the global leader in sustainable industrial filtration and water purification, setting the benchmark for technical excellence and environmental responsibility through innovation.</p>
+                            <ul style="margin-top: 10px; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Global Innovation Leader
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Eco-friendly Engineering
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Customer-Centric Excellence
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Value -->
+                    <div class="tab-content" id="value-content" style="display: none; gap: 40px; background: white; padding: 50px; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px; height: 380px;">
+                           <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" style="border-radius: var(--radius); width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary); font-family: var(--font-heading);">Our Values</h3>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 20px;">Our core values guide every decision we make, from the engineering floor to global delivery, ensuring integrity, quality, and innovation in every project we undertake.</p>
+                            <ul style="margin-top: 10px; list-style: none; padding: 0;">
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Uncompromising Quality
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Integrity & Transparency
+                                </li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-weight: 600; color: var(--dark);">
+                                    <span style="color: var(--red); font-size: 1.2rem; line-height: 1;">✓</span> 
+                                    Continuous Innovation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPANY JOURNEY TIMELINE ===== -->
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">OUR JOURNEY</div>
+                <h2 class="section-title">A History of <span class="text-red">Excellence</span></h2>
+            </div>
+            
+            <div style="display: flex; gap: 60px; margin-top: 60px; align-items: center; flex-wrap: wrap;" class="animate-on-scroll">
+                <div style="flex: 1; min-width: 200px; border-left: 2px solid var(--border); padding-left: 40px; position: relative;">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-dot" style="top: 90px;"></div>
+                    <div class="timeline-dot" style="top: 160px;"></div>
+                    <div class="timeline-dot" style="top: 230px;"></div>
+                    
+                    <h3 class="timeline-year active">1999</h3>
+                    <h3 class="timeline-year" style="margin-top: 35px;">2005</h3>
+                    <h3 class="timeline-year" style="margin-top: 35px;">2015</h3>
+                    <h3 class="timeline-year" style="margin-top: 35px;">2024</h3>
+                </div>
+                
+                <div style="flex: 3; min-width: 300px; background: var(--off-white); padding: 50px; border-radius: var(--radius-lg); position: relative; box-shadow: inset 0 0 0 1px var(--border);">
+                    <!-- Triangle pointer -->
+                    <div style="position: absolute; left: -18px; top: 15px; width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-right: 18px solid var(--off-white);"></div>
+                    
+                    <span style="display: inline-block; padding: 6px 15px; background: rgba(216, 12, 8, 0.1); color: var(--red); font-weight: 700; border-radius: 4px; margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 1px;">THE BEGINNING</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">The Journey Started</h3>
+                    <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.8;">Welcome to Mechmann Engineering, a leading industry innovator with a rich history of excellence. Our journey began with a distinct vision to empower industries and drive progress. Through the years, we have continuously scaled our capabilities, mastering advanced filtration, separation, and water treatment solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROFESSIONAL TEAM ===== -->
+    <section style="padding: 100px 0; background: var(--white);">
+        <div class="container">
+            <div class="team-header animate-on-scroll">
+                <div class="team-title-wrap">
+                    <div class="section-label">
+                        OUR TEAM
+                    </div>
+                    <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 10px; color: var(--dark);">Core strengths in <br>industrial innovation</h2>
+                </div>
+                <div>
+                    <a href="#" class="btn-outline-dark">All Member <span>↗</span></a>
+                </div>
+            </div>
+            
+            <div class="team-carousel animate-on-scroll">
+                <!-- Member 1 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Babani Nayak">
+                    </div>
+                    <h3 class="team-name">Babani Nayak</h3>
+                    <p class="team-role">CMD</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Atul Arekar">
+
+                    </div>
+                    <h3 class="team-name">Atul Arekar</h3>
+                    <p class="team-role">Director</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Suresh Naikwadi">
+
+                    </div>
+                    <h3 class="team-name">Suresh Naikwadi</h3>
+                    <p class="team-role">Director</p>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=600&q=80" alt="Sitaram Khanolkar">
+
+                    </div>
+                    <h3 class="team-name">Sitaram Khanolkar</h3>
+                    <p class="team-role">Director</p>
+                </div>
+                
+                <!-- Member 5 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=80" alt="J. Muni Reddy">
+
+                    </div>
+                    <h3 class="team-name">J. Muni Reddy</h3>
+                    <p class="team-role">Director</p>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Swati Nayak">
+
+                    </div>
+                    <h3 class="team-name">Swati Nayak</h3>
+                    <p class="team-role">Director & CFO</p>
+                </div>
+
+                <!-- Member 7 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="H.C. Sharma">
+
+                    </div>
+                    <h3 class="team-name">H.C. Sharma</h3>
+                    <p class="team-role">General Manager</p>
+                </div>
+
+                <!-- Member 8 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=600&q=80" alt="Nagraj Bhandarkar">
+
+                    </div>
+                    <h3 class="team-name">Nagraj Bhandarkar</h3>
+                    <p class="team-role">Production Manager</p>
+                </div>
+
+                <!-- Member 9 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=600&q=80" alt="Shekhar">
+
+                    </div>
+                    <h3 class="team-name">Shekhar</h3>
+                    <p class="team-role">Quality Control</p>
+                </div>
+
+                <!-- Member 10 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Shivprasad Dige">
+
+                    </div>
+                    <h3 class="team-name">Shivprasad Dige</h3>
+                    <p class="team-role">Design</p>
+                </div>
+
+                <!-- Member 11 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80" alt="Ganashyam Karekar">
+
+                    </div>
+                    <h3 class="team-name">Ganashyam Karekar</h3>
+                    <p class="team-role">Projects</p>
+                </div>
+
+                <!-- Member 12 -->
+                <div class="team-card">
+                    <div class="team-image-box">
+                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Sanjeet Kumar">
+
+                    </div>
+                    <h3 class="team-name">Sanjeet Kumar</h3>
+                    <p class="team-role">Installation Commissioning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="images/mechmann-logo.webp" alt="Mechmann Engineering" class="logo-img-footer">
+                            <span class="logo-tagline" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">It's
+                                not Magic, It's Engineering</span>
+                        </div>
+                        <p class="footer-desc">An Engineering and Fabrication company specializing in innovative turnkey
+                            Filtration, Separation & Purification Solutions.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn">in</a>
+                            <a href="#" aria-label="Twitter">tw</a>
+                            <a href="#" aria-label="Facebook">fb</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Filtration & Purification</a></li>
+                            <li><a href="index.html#services">Separation Technologies</a></li>
+                            <li><a href="index.html#services">Water Treatment</a></li>
+                            <li><a href="index.html#services">Membrane Technologies</a></li>
+                            <li><a href="index.html#services">Waste Water Treatment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Mechmann</a></li>
+                            <li><a href="#">Infrastructure</a></li>
+                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="#">Core Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:9930900990">9930900990</a></li>
+                            <li><a href="tel:9322994546">9322994546</a></li>
+                            <li><a href="mailto:mechmann@mechmann.in">mechmann@mechmann.in</a></li>
+                            <li><a href="#">Photo Gallery</a></li>
+                            <li><a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2024 Mechmann Engineering Pvt. Ltd. All Rights Reserved.</p>
+                <p>Designed & Developed By <span class="text-red">♥</span>Skycognitive Pvt. Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching logic for About Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // Update buttons
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update content
+                    contents.forEach(c => {
+                        c.style.display = 'none';
+                        c.classList.remove('active');
+                    });
+                    contents[index].style.display = 'flex';
+                    contents[index].classList.add('active');
+                });
+            });
+
+            // Timeline active state switching
+            const timelineYears = document.querySelectorAll('.timeline-year');
+            const timelineDots = document.querySelectorAll('.timeline-dot');
+            timelineYears.forEach((year, index) => {
+                year.addEventListener('click', () => {
+                    timelineYears.forEach(y => y.classList.remove('active'));
+                    timelineDots.forEach(d => d.classList.remove('active'));
+                    
+                    year.classList.add('active');
+                    timelineDots[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
